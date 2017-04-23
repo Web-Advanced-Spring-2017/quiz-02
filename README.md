@@ -219,12 +219,18 @@ function y() {
 
 What will be the output? Explain
 
-**Answer: 100**
+**Answer:**
+
+```js
+Promise Status:  Promise { 10 }
+100
+Promise Status:  Promise { 10 }
+```
 
 We create a deferred object and its promise is stored in `var promise`. It can either be resolved or rejected. The timing of which depends on the two `setTimeout()` statements.
-`setTimeout(y, 1000)` executes after 1 second and `setTimeout(x, 3000)` executes after 3 seconds. So `y()` is called before `x()`. `y()` resolves the promise with a value of `10`.
+`setTimeout(y, 1000)` executes after 1 second and `setTimeout(x, 3000)` executes after 3 seconds. So `y()` is called before `x()`. `y()` resolves the promise with a value of `10` and outputs ` Promise { 10 }`.
 Once that's done, the `then()` statement is called and `console.log(value * 10)` gets executed with the resolved value. So the output is 10x10 = `100`.
-Once the promise is resolved, it can't be rejected. So the `catch` statement never executes.
+Next, `x()` gets executed. Since the promise is already resolved it can't be rejected. Next, it outputs ` Promise { 10 }` with the resolved value. Lastly, `catch` statement never executes.
 
 ---
 
