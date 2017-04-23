@@ -4,6 +4,7 @@
 *Time Limit: 25min*
 	
 **Q1:** 
+
 Which of the following methods removes the last element from an array and returns that element?
 
 1.	get()
@@ -48,6 +49,7 @@ When executed, the below JavaScript code will pop up three alerts. Identify the 
 4.	7; 6; 8
 
 **Answer: 1**
+
 In the snippet, first `var a = 6 ` is defined globally, then `test()` is defined but not called yet. At the end of it's definition the function is called.
 - `var a` is now assigned the value 7, locally scoped within `test()`
 - `again()` is defined and then called
@@ -73,6 +75,7 @@ console.log('Done!')
 What will be the output? Explain
 
 **Answer:**
+
 The code reads the file `questions.txt` asynchronously that takes some time to return the file data in a callback.
 Hence, `Done!` is printed out first and then the file contents `console.log(data)`. 
 
@@ -95,6 +98,7 @@ console.log('Done!')
 What will be the output? Explain
 
 **Answer:**
+
 The code reads the file `questions.txt` asynchronously that takes some time to return the file data in a callback.
 While `fs.readFile()` executes, it runs `console.log(content)`. However, the content is `null`, because `fs.readFile()` hasn't finished executing. It'll output `undefined`, then `Done!` and file contents are never logged in console.
 
@@ -165,6 +169,7 @@ undefined
 ---
 
 **Q7:**
+
 Write a dummy function to show how callbacks work.
 
 ```js
@@ -215,6 +220,7 @@ function y() {
 What will be the output? Explain
 
 **Answer: 100**
+
 We create a deferred object and its promise is stored in `var promise`. It can either be resolved or rejected. The timing of which depends on the two `setTimeout()` statements.
 `setTimeout(y, 1000)` executes after 1 second and `setTimeout(x, 3000)` executes after 3 seconds. So `y()` is called before `x()`. `y()` resolves the promise with a value of `10`.
 Once that's done, the `then()` statement is called and `console.log(value * 10)` gets executed with the resolved value. So the output is 10x10 = `100`.
@@ -238,6 +244,7 @@ io.sockets.on('connection', function(socket){
 Explain the difference.
 
 **Answer:**
+
 - `socket.emit(identifier, data)` : Emits data back to the client `socket` itself
 - `socket.broadcast.emit(identifier, data)` : Emits data to all connected clients except the `socket` client itself
 - `io.sockets.emit(identifier,data)` : Emits data to everyone
@@ -255,4 +262,5 @@ Explain the difference.
 4. Both 2 and 3
 
 **Answer: 4**
-[Reference](https://docs.mongodb.com/manual/reference/method/db.collection.update/)QD
+
+[Reference](https://docs.mongodb.com/manual/reference/method/db.collection.update/)
